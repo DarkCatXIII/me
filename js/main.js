@@ -270,7 +270,23 @@
   });
 
 
+	$('.downloadCV').click(function(e) {
+		downloadMyCVFile();
+	});
 
+	const downloadMyCVFile = async () => {
+		try {
+			const filePath = '/Ahmed%20Tarek%20Ahmed.pdf';
+			const link = document.createElement('a');
+			link.href = filePath; // Path to the file on the server
+			link.download = filePath.split('/').pop().replaceAll("%20", " "); // Optional: Suggest a filename
+			document.body.appendChild(link);
+			link.click();
+			document.body.removeChild(link);
+		} catch (error) {
+			console.error('Error downloading file:', error);
+		}
+	};
 
 
 })(jQuery);

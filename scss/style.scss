@@ -917,6 +917,12 @@ h1, h2, h3, h4, h5,
 			line-height: 1.0;
 			color: $primary;
 		}
+		svg {
+			fill: #ffbd39 !important;
+			path {
+				fill: #ffbd39 !important;	
+			}
+		}
 	}
 	.desc{
 		h3{
@@ -960,6 +966,14 @@ h1, h2, h3, h4, h5,
 		.icon{
 			i{
 				color: $white;
+			}
+
+			svg {
+				fill: $white !important;
+			
+				path {
+					fill: $white !important;
+				}
 			}
 		}
 		h3{

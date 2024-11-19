@@ -41,7 +41,7 @@ module.exports = {
                 platinum: '#E8E8E8',
                 colorGray: '#999999',
                 colorSilver: '#707070',
-                theme: '#00bc91',
+                theme: '#c00c0b',
                 themeHover: '#069c7a',
                 power__black: '#18191a',
                 nightBlack: '#212223',
@@ -110,7 +110,7 @@ module.exports = {
             boxShadow: {
                 dots_glow: '0 0 0 .5rem rgba(255, 255, 255, 0.15)',
                 '3xl': '0px 0px 30px 0px rgba(0, 0, 1, 0.05)',
-                theme_shadow: '0px 5px 10px 0px rgba(0, 188, 145, 0.30)',
+                theme_shadow: '0px 5px 10px 0px rgba(192, 12, 12, 0.30)',
             },
             zIndex: {
                 1: '1',

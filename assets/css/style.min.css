@@ -920,6 +920,14 @@ html.dark input:-webkit-autofill,
   top: 50%;
 }
 
+.top-1\/4 {
+  top: 25%;
+}
+
+.top-1\/8 {
+  top: 12.5%;
+}
+
 .top-4 {
   top: 1rem;
 }

@@ -1753,6 +1753,10 @@ html.dark input:-webkit-autofill,
   border-width: 1px;
 }
 
+.border-2 {
+  border-width: 2px;
+}
+
 .border-10 {
   border-width: 10px;
 }
@@ -3726,6 +3730,10 @@ html.dark .portfolio_wrapper .info span {
 .group.active .dark\:group-\[\&\.active\]\:text-white:is(.dark *) {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.gap-10 {
+  gap: 10px;
 }
 
 @media not all and (min-width: 1280px) {

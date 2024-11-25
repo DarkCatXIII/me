@@ -440,7 +440,7 @@
                         "</div>" + 
                         "</li>";
 
-                    worksEl.append(work);
+                    worksEl = worksEl + work;
                 });
 
                 // educations.array.forEach(education => {

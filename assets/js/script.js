@@ -443,9 +443,9 @@
                     worksEl.append(work);
                 });
 
-                educations.array.forEach(education => {
+                // educations.array.forEach(education => {
                     
-                });
+                // });
                 
                 workDiv.innerHTML = worksEl;
                 // educationDiv.innerHTML = educationsEl;

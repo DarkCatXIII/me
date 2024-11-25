@@ -417,7 +417,7 @@
                 let worksEl = ``;
                 let educationsEl = ``;
 
-                works.array.forEach(function(element, index, array) {
+                works.forEach(function(element, index, array) {
                     let work = "<li>" +
                         "<div class=\"flex items-center justify-between mb-5 md:w-64 md:block md:mb-0\">" +
                         "<h6 class=\"text-sm font-medium text-black dark:text-white text-opacity-60 md:text-base md:text-opacity-100\">" +

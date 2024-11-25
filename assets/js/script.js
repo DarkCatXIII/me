@@ -108,8 +108,8 @@
     /* ============================================================ */
     var skillSlider = new Swiper('.skills-slider .swiper', {
         spaceBetween: 30,
-        slidesPerView: 2,
-        loop: !1,
+        slidesPerView: 1,
+        loop: true,
         speed: 800,
         breakpoints: {
             0: {
@@ -137,21 +137,65 @@
         },
         on: {
             init: function() {
+                const screenWidth = $('body').width();
+                let slidesPerView = 0;
+                let slidesCount = this.slides.length;
+                if (screenWidth >= 1000) {
+                    slidesPerView = 8;
+                } 
+                if (screenWidth >= 900 && screenWidth < 1000) {
+                    slidesPerView = 6;
+                } 
+                if (screenWidth >= 800 && screenWidth < 900) {
+                    slidesPerView = 8;
+                }
+                 if (screenWidth >= 600 && screenWidth < 800) {
+                    slidesPerView = 6;
+                }
+                if (screenWidth >= 500 && screenWidth < 600) {
+                    slidesPerView = 4;
+                }
+                if (screenWidth >= 0 && screenWidth < 500) {
+                    slidesPerView = 2;
+                }
+
                 $('.skills-slider-navigation .counter').html(
                     '<span class="text-theme">' +
                     (this.realIndex + 1) +
                     '</span>' +
                     '/' +
-                    this.slides.length
+                    (slidesCount - (slidesPerView))
                 );
             },
             slideChange: function() {
+                const screenWidth = $('body').width();
+                let slidesPerView = 0;
+                let slidesCount = this.slides.length;
+                if (screenWidth >= 1000) {
+                    slidesPerView = 8;
+                } 
+                if (screenWidth >= 900 && screenWidth < 1000) {
+                    slidesPerView = 6;
+                } 
+                if (screenWidth >= 800 && screenWidth < 900) {
+                    slidesPerView = 8;
+                }
+                 if (screenWidth >= 600 && screenWidth < 800) {
+                    slidesPerView = 6;
+                }
+                if (screenWidth >= 500 && screenWidth < 600) {
+                    slidesPerView = 4;
+                }
+                if (screenWidth >= 0 && screenWidth < 500) {
+                    slidesPerView = 2;
+                }
+
                 $('.skills-slider-navigation .counter').html(
                     '<span class="text-theme">' +
                     (this.realIndex + 1) +
                     '</span>' +
                     '/' +
-                    this.slides.length
+                    (slidesCount - (slidesPerView))
                 );
             },
         },

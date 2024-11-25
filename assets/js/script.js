@@ -427,7 +427,6 @@
                         element.date +
                         "</p>" +
                         "<p>" +
-                        "at " +
                         element.location +
                         "</p>" +
                         "<p class=\"text-[13px] md:text-sm text-theme\">" +

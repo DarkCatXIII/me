@@ -417,30 +417,30 @@
                 let worksEl = ``;
                 let educationsEl = ``;
 
-                works.array.forEach(work => {
-                    worksEl.append(
-                        "<li>" +
+                works.array.forEach(function(element, index, array) {
+                    let work = "<li>" +
                         "<div class=\"flex items-center justify-between mb-5 md:w-64 md:block md:mb-0\">" +
                         "<h6 class=\"text-sm font-medium text-black dark:text-white text-opacity-60 md:text-base md:text-opacity-100\">" +
-                        work.name +
+                        element.name +
                         "</h6>" +
                         "<p class=\"text-[13px] md:text-sm text-theme\">" +
-                        work.date +
+                        element.date +
                         "</p>" +
                         "<p>" +
-                        work.location + " - " + work.role +
+                        element.location + " - " + element.role +
                         "</p>" +
                         "</div>" +
                         "<div class=\"md:flex-1 md:pl-16 relative md:before:content-[''] md:before:absolute md:before:-left-1 md:before:top-3 md:before:w-2 md:before:h-2 md:before:bg-theme md:before:rounded-full md:before:shadow-dots_glow\">" + 
                         "<h4 class=\"text-xl xl:text-2xl font-medium xl:font-medium leading-7 text-black dark:text-white mb-2.5\">" +
-                        work.position +
+                        element.position +
                         "</h4>" +
                         "<p>" +
-                        work.todo +
+                        element.todo +
                         "</p>" +
                         "</div>" + 
-                        "</li>"
-                        );
+                        "</li>";
+
+                    worksEl.append(work);
                 });
 
                 educations.array.forEach(education => {

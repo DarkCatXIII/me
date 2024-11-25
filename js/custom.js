@@ -51,35 +51,4 @@
         event.preventDefault();
       });
     });   
-     
-
-    // JSON DATA WORK AND EDUCATION
-
-            fetch('me.json')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok ' + response.statusText);
-                }
-                return response.json(); // Parse the JSON data
-            })
-            .then(data => {
-                // Populate the HTML with JSON data
-                const educationDiv = document.getElementById('profile');
-                const workDiv = document.getElementById('profile');
-                educationDiv.innerHTML = `
-                    <p><strong>Name:</strong> ${data.name}</p>
-                    <p><strong>Age:</strong> ${data.age}</p>
-                    <p><strong>Skills:</strong> ${data.skills.join(', ')}</p>
-                `;
-                workDiv.innerHTML = `
-                    <p><strong>Name:</strong> ${data.name}</p>
-                    <p><strong>Age:</strong> ${data.age}</p>
-                    <p><strong>Skills:</strong> ${data.skills.join(', ')}</p>
-                `;
-            })
-            .catch(error => {
-                console.error('Error fetching the JSON file:', error);
-            });
-
-
   });

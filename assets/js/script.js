@@ -398,5 +398,35 @@
         return false;
     });
 
+
+    /* ============================================================ */
+    /* Set Work Experiance & Education
+    /* ============================================================ */
+    $(document).ready(function () {
+        $.ajax({
+            url: 'me.json',
+            method: 'GET',
+            dataType: 'json',
+            success: function (data) {
+                const educationDiv = document.getElementById('test1');
+                const workDiv = document.getElementById('test');
+                educationDiv.innerHTML = `
+                    <p><strong>Name:</strong> ${data.name}</p>
+                    <p><strong>Age:</strong> ${data.age}</p>
+                    <p><strong>Skills:</strong> ${data.skills.join(', ')}</p>
+                `;
+                workDiv.innerHTML = `
+                    <p><strong>Name:</strong> ${data.name}</p>
+                    <p><strong>Age:</strong> ${data.age}</p>
+                    <p><strong>Skills:</strong> ${data.skills.join(', ')}</p>
+                `;
+            },
+            error: function (e) {
+                let err = e.error
+                console.log('JSON Error.');
+            }
+        });
+    });
+            
 })(jQuery);
 // jQuery Ended

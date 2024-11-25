@@ -2100,6 +2100,10 @@ html.dark input:-webkit-autofill,
   padding-top: 1.75rem;
 }
 
+.h-50 {
+  height: 50px;
+}
+
 .text-left {
   text-align: left;
 }

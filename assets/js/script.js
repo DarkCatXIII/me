@@ -408,18 +408,47 @@
             method: 'GET',
             dataType: 'json',
             success: function (data) {
-                const educationDiv = document.getElementById('test1');
-                const workDiv = document.getElementById('test');
-                educationDiv.innerHTML = `
-                    <p><strong>Name:</strong> ${data.name}</p>
-                    <p><strong>Age:</strong> ${data.age}</p>
-                    <p><strong>Skills:</strong> ${data.skills.join(', ')}</p>
-                `;
-                workDiv.innerHTML = `
-                    <p><strong>Name:</strong> ${data.name}</p>
-                    <p><strong>Age:</strong> ${data.age}</p>
-                    <p><strong>Skills:</strong> ${data.skills.join(', ')}</p>
-                `;
+                const works = data.work
+                const educations = data.education
+
+                const workDiv = document.getElementById('medo-work-experiance-div');
+                const educationDiv = document.getElementById('medo-education-experiance-div');
+
+                let worksEl = ``;
+                let educationsEl = ``;
+
+                works.array.forEach(work => {
+                    worksEl.append(
+                        "<li>" +
+                        "<div class=\"flex items-center justify-between mb-5 md:w-64 md:block md:mb-0\">" +
+                        "<h6 class=\"text-sm font-medium text-black dark:text-white text-opacity-60 md:text-base md:text-opacity-100\">" +
+                        work.name +
+                        "</h6>" +
+                        "<p class=\"text-[13px] md:text-sm text-theme\">" +
+                        work.date +
+                        "</p>" +
+                        "<p>" +
+                        work.location + " - " + work.role +
+                        "</p>" +
+                        "</div>" +
+                        "<div class=\"md:flex-1 md:pl-16 relative md:before:content-[''] md:before:absolute md:before:-left-1 md:before:top-3 md:before:w-2 md:before:h-2 md:before:bg-theme md:before:rounded-full md:before:shadow-dots_glow\">" + 
+                        "<h4 class=\"text-xl xl:text-2xl font-medium xl:font-medium leading-7 text-black dark:text-white mb-2.5\">" +
+                        work.position +
+                        "</h4>" +
+                        "<p>" +
+                        work.todo +
+                        "</p>" +
+                        "</div>" + 
+                        "</li>"
+                        );
+                });
+
+                educations.array.forEach(education => {
+                    
+                });
+                
+                workDiv.innerHTML = worksEl;
+                // educationDiv.innerHTML = educationsEl;
             },
             error: function (e) {
                 let err = e.error

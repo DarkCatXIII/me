@@ -427,7 +427,11 @@
                         element.date +
                         "</p>" +
                         "<p>" +
-                        element.location + " - " + element.role +
+                        "at "
+                        element.location +
+                        "</p>" +
+                        "<p class=\"text-[13px] md:text-sm text-theme\">" +
+                        element.role +
                         "</p>" +
                         "</div>" +
                         "<div class=\"md:flex-1 md:pl-16 relative md:before:content-[''] md:before:absolute md:before:-left-1 md:before:top-3 md:before:w-2 md:before:h-2 md:before:bg-theme md:before:rounded-full md:before:shadow-dots_glow\">" + 

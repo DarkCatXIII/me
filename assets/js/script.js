@@ -482,7 +482,7 @@
 
 
     /* ============================================================ */
-    /* Set EmailJS
+    /* Set Gmail Setup
     /* ============================================================ */
     emailjs.init('service_60pk1eb');
            
@@ -504,16 +504,6 @@
             date: `${day}, ${month} ${year}`
         };
 
-        // Send email using EmailJS
-        emailjs.send('service_60pk1eb', 'template_uhwm5nx', formData)
-        .then(function(response) {
-            console.log('SUCCESS!', response);
-            document.getElementById('responseMessage').innerText = 'Message sent successfully!';
-            document.getElementById('contactForm').reset();  // Reset the form
-        }, function(error) {
-            console.log('FAILED...', error);
-            document.getElementById('responseMessage').innerText = 'Failed to send message.';
-        });
   });
 
 

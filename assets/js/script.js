@@ -479,6 +479,43 @@
             }
         });
     });
-            
+
+
+    /* ============================================================ */
+    /* Set EmailJS
+    /* ============================================================ */
+    emailjs.init('service_60pk1eb');
+           
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const date = new Date();
+        const day = String(date.getDate()).padStart(2, '0'); // Add leading zero if day is less than 10
+        const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+        const month = monthNames[date.getMonth()]; // Get the abbreviated month name
+        const year = date.getFullYear();
+
+
+        // Collect the form data
+        const formData = {
+            name: document.querySelector('[name="name"]').value,
+            email: document.querySelector('[name="email"]').value,
+            message: document.querySelector('[name="message"]').value,
+            date: `${day}, ${month} ${year}`
+        };
+
+        // Send email using EmailJS
+        emailjs.send('service_60pk1eb', 'template_uhwm5nx', formData)
+        .then(function(response) {
+            console.log('SUCCESS!', response);
+            document.getElementById('responseMessage').innerText = 'Message sent successfully!';
+            document.getElementById('contactForm').reset();  // Reset the form
+        }, function(error) {
+            console.log('FAILED...', error);
+            document.getElementById('responseMessage').innerText = 'Failed to send message.';
+        });
+  });
+
+
 })(jQuery);
 // jQuery Ended

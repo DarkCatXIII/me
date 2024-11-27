@@ -503,14 +503,21 @@
         };
 
 
-          emailjs.send("service_yljwisr", "template_uhwm5nx", formData, {
-                publicKey: "VAemlW7kSM9ZJv3Mk"
-            })
-            .then((response) => {
-            console.log('Email sent successfully!', response.status, response.text);
-            })
-            .catch((error) => {
-            console.error('Failed to send email:', error);
+            var data = {
+                service_id: 'service_yljwisr',
+                template_id: 'template_uhwm5nx',
+                user_id: 'VAemlW7kSM9ZJv3Mk',
+                template_params: formData
+            };
+
+            $.ajax('https://api.emailjs.com/api/v1.0/email/send', {
+                type: 'POST',
+                data: JSON.stringify(data),
+                contentType: 'application/json'
+            }).done(function() {
+               console.log('Hello, ' + formData.name +'Your mail is sent!');
+            }).fail(function(error) {
+                console.log('Oops... ' + JSON.stringify(error));
             });
 
 

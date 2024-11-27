@@ -483,9 +483,7 @@
 
     /* ============================================================ */
     /* Set Gmail Setup
-    /* ============================================================ */
-    emailjs.init('service_60pk1eb');
-           
+    /* ============================================================ */           
     document.getElementById('contactForm').addEventListener('submit', function(event) {
         event.preventDefault();
 
@@ -498,11 +496,23 @@
 
         // Collect the form data
         const formData = {
-            name: document.querySelector('[name="name"]').value,
-            email: document.querySelector('[name="email"]').value,
-            message: document.querySelector('[name="message"]').value,
+            name: document.querySelector('[name="client__name"]').value,
+            email: document.querySelector('[name="client_email"]').value,
+            message: document.querySelector('[name="contact__message"]').value,
             date: `${day}, ${month} ${year}`
         };
+
+
+          emailjs.send("service_yljwisr", "template_uhwm5nx", formData, {
+                publicKey: "VAemlW7kSM9ZJv3Mk"
+            })
+            .then((response) => {
+            console.log('Email sent successfully!', response.status, response.text);
+            })
+            .catch((error) => {
+            console.error('Failed to send email:', error);
+            });
+
 
   });
 

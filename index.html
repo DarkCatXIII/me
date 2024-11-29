@@ -40,6 +40,20 @@
     <link rel="stylesheet" href="assets/css/cdheadline.css">
     <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="assets/css/style.min.css">
+
+    <script>
+        // Check for saved theme in localStorage
+        const savedTheme = localStorage.getItem('theme');
+
+        if (savedTheme) {
+            localStorage.setItem('theme', savedTheme);
+        } else {
+            // Check system preference
+            const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const defaultTheme = prefersDarkScheme ? 'dark' : 'light';
+            localStorage.setItem('theme', defaultTheme);
+        }
+    </script>
 </head>
 
 <body class="relative custom_cursor">

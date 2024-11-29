@@ -400,7 +400,7 @@
 
 
     /* ============================================================ */
-    /* Set Work Experiance & Education
+    /* Set Work Experiance & Education 
     /* ============================================================ */
     $(document).ready(function () {
         $.ajax({
@@ -408,70 +408,12 @@
             method: 'GET',
             dataType: 'json',
             success: function (data) {
-                const works = data.work
-                const educations = data.education
+                const works = data.work;
+                const educations = data.education;
+                const projects = data.project;
 
-                const workDiv = document.getElementById('medo-work-experiance-div');
-                const educationDiv = document.getElementById('medo-education-experiance-div');
-
-                let worksEl = ``;
-                let educationsEl = ``;
-
-                works.forEach(function(element, index, array) {
-                    let work = "<li>" +
-                        "<div class=\"flex items-center justify-between mb-5 md:w-64 md:block md:mb-0\">" +
-                        "<h6 class=\"text-sm font-medium text-black dark:text-white text-opacity-60 md:text-base md:text-opacity-100\">" +
-                        element.name +
-                        "</h6>" +
-                        "<p class=\"text-[13px] md:text-sm text-theme\">" +
-                        element.date +
-                        "</p>" +
-                        "<p>" +
-                        element.location +
-                        "</p>" +
-                        "<p class=\"text-[13px] md:text-sm text-theme\">" +
-                        element.role +
-                        "</p>" +
-                        "</div>" +
-                        "<div class=\"md:flex-1 md:pl-16 relative md:before:content-[''] md:before:absolute md:before:-left-1 md:before:top-3 md:before:w-2 md:before:h-2 md:before:bg-theme md:before:rounded-full md:before:shadow-dots_glow\">" + 
-                        "<h4 class=\"text-xl xl:text-2xl font-medium xl:font-medium leading-7 text-black dark:text-white mb-2.5\">" +
-                        element.position +
-                        "</h4>" +
-                        "<p>" +
-                        element.todo +
-                        "</p>" +
-                        "</div>" + 
-                        "</li>";
-
-                    worksEl = worksEl + work;
-                });
-
-                educations.forEach(function(element, index, array) {
-                    let education = "<li>" +
-                                "<div class=\"flex items-center justify-between mb-5 md:w-64 md:block md:mb-0\">" +
-                                "<h6 class=\"text-sm font-medium text-black dark:text-white text-opacity-60 md:text-base md:text-opacity-100\">" +
-                                element.name +  
-                                "</h6>" +
-                                "<p class=\"text-[13px] md:text-sm text-theme\">" +
-                                element.date +
-                                "</p>" +
-                                "</div>" +
-                                "<div class=\"md:flex-1 md:pl-16 relative md:before:content-[''] md:before:absolute md:before:-left-1 md:before:top-3 md:before:w-2 md:before:h-2 md:before:bg-theme md:before:rounded-full md:before:shadow-dots_glow\">" +
-                                "<h4 class=\"text-xl xl:text-2xl font-medium xl:font-medium leading-7 text-black dark:text-white mb-2.5\">" +
-                                element.tite + 
-                                "</h4>" +
-                                "<p>" +
-                                element.todo +
-                                "</p>" +
-                                "</div>" +
-                                "</li>";
-
-                    educationsEl = educationsEl + education;
-                });
-                
-                workDiv.innerHTML = worksEl;
-                educationDiv.innerHTML = educationsEl;
-                
+                setWorkExperiance(works);
+                setEducation(educations);
             },
             error: function (e) {
                 let err = e.error
@@ -479,6 +421,146 @@
             }
         });
     });
+
+    
+    /* ============================================================ */
+    /* Set Work Experiance 
+    /* ============================================================ */
+    function setWorkExperiance(works) {
+        const workDiv = document.getElementById('medo-work-experiance-div');
+
+        let worksEl = ``;
+
+        works.forEach(function(element, index, array) {
+            let work = "<li>" +
+                "<div class=\"flex items-center justify-between mb-5 md:w-64 md:block md:mb-0\">" +
+                "<h6 class=\"text-sm font-medium text-black dark:text-white text-opacity-60 md:text-base md:text-opacity-100\">" +
+                element.name +
+                "</h6>" +
+                "<p class=\"text-[13px] md:text-sm text-theme\">" +
+                element.date +
+                "</p>" +
+                "<p>" +
+                element.location +
+                "</p>" +
+                "<p class=\"text-[13px] md:text-sm text-theme\">" +
+                element.role +
+                "</p>" +
+                "</div>" +
+                "<div class=\"md:flex-1 md:pl-16 relative md:before:content-[''] md:before:absolute md:before:-left-1 md:before:top-3 md:before:w-2 md:before:h-2 md:before:bg-theme md:before:rounded-full md:before:shadow-dots_glow\">" + 
+                "<h4 class=\"text-xl xl:text-2xl font-medium xl:font-medium leading-7 text-black dark:text-white mb-2.5\">" +
+                element.position +
+                "</h4>" +
+                "<p>" +
+                element.todo +
+                "</p>" +
+                "</div>" + 
+                "</li>";
+
+            worksEl = worksEl + work;
+        });
+
+                
+        workDiv.innerHTML = worksEl;
+    }
+
+    /* ============================================================ */
+    /* Set Education 
+    /* ============================================================ */
+    function setEducation(educations) {
+        const educationDiv = document.getElementById('medo-education-experiance-div');
+
+        let educationsEl = ``;
+
+        educations.forEach(function(element, index, array) {
+            let education = "<li>" +
+                        "<div class=\"flex items-center justify-between mb-5 md:w-64 md:block md:mb-0\">" +
+                        "<h6 class=\"text-sm font-medium text-black dark:text-white text-opacity-60 md:text-base md:text-opacity-100\">" +
+                        element.name +  
+                        "</h6>" +
+                        "<p class=\"text-[13px] md:text-sm text-theme\">" +
+                        element.date +
+                        "</p>" +
+                        "</div>" +
+                        "<div class=\"md:flex-1 md:pl-16 relative md:before:content-[''] md:before:absolute md:before:-left-1 md:before:top-3 md:before:w-2 md:before:h-2 md:before:bg-theme md:before:rounded-full md:before:shadow-dots_glow\">" +
+                        "<h4 class=\"text-xl xl:text-2xl font-medium xl:font-medium leading-7 text-black dark:text-white mb-2.5\">" +
+                        element.tite + 
+                        "</h4>" +
+                        "<p>" +
+                        element.todo +
+                        "</p>" +
+                        "</div>" +
+                        "</li>";
+
+            educationsEl = educationsEl + education;
+        });
+                
+        educationDiv.innerHTML = educationsEl;
+    }
+
+    /* ============================================================ */
+    /* Set Projets 
+    /* ============================================================ */
+    function setProjets(projects) {
+        let first4 = projects.slice(0, 4);
+        const projectDiv = document.getElementById('medo-project-div');
+
+        let projectsEl = ``;
+
+        first4.forEach(function(element, index, array) {
+            if (index == 0 || index == 3) {
+                let project = "<div class=\"item md:col-span-2 group\">" +
+                            "<a href=\"project-single.html\" class=\"block p-3 overflow-hidden border md:p-4 rounded-xl border-platinum dark:border-greyBlack\">" +
+                            "<div class=\"img-wrapper\">" +
+                            "<img src=\"assets/img/portfolio/portfolio-img1.png\" class=\"rounded-lg max-md:h-[17rem] w-full max-md:object-cover max-md:object-center transition-all duration-300 group-hover:blur-xs\" alt=" + element.name + ">" + 
+                            "<div class=\"absolute inset-0 transition-all duration-300 opacity-0 overlay bg-gradient-to-t from-white dark:from-black to-transparent rounded-xl group-hover:opacity-100\">" + 
+                            "</div>" +
+                            "</div>" +
+                            "<div class=\"info text-center position-center max-lg:text-3xl text-lead font-semibold text-black dark:text-white leading-1.15 transition duration-500 scale-110 opacity-0 group-hover:scale-100 group-hover:opacity-100 relative z-10\">" +
+                            element.name +
+                            "<span>" +
+                            element.sub_name +
+                            "</span>" +
+                            "</div>" +
+                            "</a>" +
+                            "<ul class=\"absolute z-10 transition-all duration-500 opacity-0 md:top-9 md:right-9 top-6 right-6 group-hover:opacity-100\">" +
+                            "<li>"
+                            "<a href=" + element.client_site + " class=\"inline-flex items-center gap-2 px-5 py-3 text-sm font-light leading-none text-white transition-colors bg-metalBlack rounded-3xl hover:text-theme\">" +
+                            element.clinet +
+                            "</a>" +
+                            "</li>" +
+                            "</ul>" +
+                            "</div><!--./portfolio-card-->";
+            } else {
+                let project = "<div class=\"item md:col-span-1 group\">" +
+                        "<a href=\"project-single.html\" class=\"block p-3 overflow-hidden border md:p-4 rounded-xl border-platinum dark:border-greyBlack\">" +
+                        "<div class=\"img-wrapper\">" +
+                        "<img src=" + element.mainImage + " class=\"rounded-lg max-md:h-[17rem] w-full max-md:object-cover max-md:object-center transition-all duration-300 group-hover:blur-xs\" alt=" + element.name + ">" +
+                        "<div class=\"absolute inset-0 transition-all duration-300 opacity-0 overlay bg-gradient-to-t from-white dark:from-black to-transparent rounded-xl group-hover:opacity-100\">" +
+                        "</div>" +
+                        "</div>" +
+                        "<div class=\"info text-center position-center max-lg:text-3xl text-lead font-semibold text-black dark:text-white leading-1.15 transition duration-500 scale-110 opacity-0 group-hover:scale-100 group-hover:opacity-100 relative z-10\">" +
+                        element.name +
+                        "<span>" +
+                        element.sub_name +
+                        "</span>" +
+                        "</div>" +
+                        "</a>" +
+                        "<ul class=\"absolute z-10 transition-all duration-500 opacity-0 md:top-9 md:right-9 top-6 right-6 group-hover:opacity-100\">" +
+                        "<li>" +
+                        "<a href=" + element.client_site + " class=\"inline-flex items-center gap-2 px-5 py-3 text-sm font-light leading-none text-white transition-colors bg-metalBlack rounded-3xl hover:text-theme\">" +
+                        element.clinet +
+                        "</a>" +
+                        "</li>" +
+                        "</ul>" +
+                        "</div><!--./portfolio-card-->";
+            }
+
+            projectsEl = projectsEl + project;
+        });
+                
+        projectDiv.innerHTML = projectsEl;
+    }
 
 
     /* ============================================================ */

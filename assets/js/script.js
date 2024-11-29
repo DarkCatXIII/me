@@ -502,6 +502,97 @@
     /* ============================================================ */
     /* Set Projets 
     /* ============================================================ */
+    setProjets([
+        {
+            "id": 1,
+            "name": "El Ezaby",
+            "sub_name": "Pharmacy",
+            "slogen": "El Ezaby Pharmacy app",
+            "clinet": "Awfar Inc.",
+            "clinet_site": "https://solutions.awfar.com/",
+            "position": "Senior iOS Software Engineer",
+            "date": "Feb 2020 - Present",
+            "role": "Full-time",
+            "description": "El Ezaby pharmacies mobile application is your \"to go\" portal for all your medical, cosmetics, and health needs. <br> <br> El Ezaby pharmacies mobile application offers:<br>- Home Delivery.<br>- Online Payment.<br>- More than 11,000 products.<br>- Detailed products' descriptions.<br>- Online Medical insurance's prescriptions cash out.<br>- Online Products' availability checking.<br>- Scanning the product's bar code from your mobile's camera to make sure it's available.<br>Download the biggest pharmaceutical mobile application, and enjoy the promo codes and gifts.",
+            "mainImage": "assets/img/projects/project-main-1.png",
+            "subImage": "assets/img/projects/project-main-1.png",
+            "otherImage": "assets/img/projects/project-main-1.png",
+            "technology": [
+                {
+                    "logo": "",
+                    "name": "SwiftUI",
+                    "percentage": ""
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Wayak - وياك",
+            "sub_name": "Your Meds, Your Health",
+            "slogen": "Wayak - ONE APPLICATION FOR ALL YOUR MEDICAL NEEDS",
+            "clinet": "Wayak",
+            "clinet_site": "https://wayakcard.com/en/",
+            "position": "iOS Developer",
+            "date": "Dec 2022 - Nov 2024",
+            "role": "Freelance",
+            "description": "Healthcare Service Platform<br>Wayak is an innovative mobile application designed to simplify healthcare management while reducing costs. As an iOS developer, I contributed to building and optimizing an app that unifies multiple healthcare services, providing users with a seamless experience for managing prescriptions, consultations, and medical services.<br>Key Features Developed:<br>• Medication Delivery Service: Integrated a feature for free home delivery of prescribed medications, with savings up to 20%.<br>•  Easy Ordering System: Implemented search functionality for medications by name, category, or prescription upload, streamlining the ordering process.<br>•  Unlimited Medical Consultations: Developed a system for users to access free, unlimited medical consultations via the app.<br>•  Wayak Card Discounts: Integrated a digital card offering users up to 40% savings at trusted medical centers and labs.<br>•  User Experience Optimization: Focused on intuitive UI/UX design and efficient app performance to enhance user engagement and satisfaction.<br>This project highlights my proficiency in mobile app development, UI/UX design, and integrating third-party services to create a comprehensive and cost-effective healthcare solution.",
+            "mainImage": "assets/img/projects/project-sub-2.png",
+            "subImage": "assets/img/projects/project-sub-2.png",
+            "otherImage": "assets/img/projects/project-sub-2.png",
+            "technology": [
+                {
+                    "logo": "",
+                    "name": "Swift",
+                    "percentage": ""
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Awfar Chat",
+            "sub_name": "CRM Chat System",
+            "slogen": "Awfar Chat Center",
+            "clinet": "Awfar Inc.",
+            "clinet_site": "https://solutions.awfar.com/eg/awfar-chat-center/",
+            "position": "UI/UX Designer - iOS Developer",
+            "date": "Feb 2022 - Feb 2024",
+            "role": "Freelance",
+            "description": "Awfar Customer Engagement Platform – the ultimate solution for streamlining customer interactions and enhancing engagement with your business. Awfar Chat empowers businesses to efficiently manage and connect website and mobile application chats, all in one easy-to-use platform.<br>Key Features:<br>1. Seamless Chat Management:* Awfar Chat brings together chats from your website and mobile application into a single, unified dashboard. Stay connected with your customers in real-time and never miss a conversation again.<br>2. Multi-Channel Communication:* Engage with your customers across more than 10 online communication channels, all from one place. Connect through WhatsApp, Facebook, Instagram messages, and more, providing a unified experience for your customers.<br>3. Unlimited Data Insights:* Awfar Chat's comprehensive data management allows you to harness the power of customer data. Track and analyze customer interactions, enabling you to make data-driven decisions for your business.<br>4. Personalized Customer Campaigns:* Tailor your messages to specific customer segments and interests. Create personalized campaigns for both new and returning customers to enhance their experience and boost brand loyalty.<br>5. Automated Chatbot Support:* Integrate chatbots into your interactions to efficiently handle frequently asked questions and provide immediate responses, even outside regular business hours.<br>6. Dynamic Chat Distribution:* Assign chats to employees, departments, or branches automatically, optimizing workload distribution and ensuring timely responses to your customers.<br>7. E-Commerce on WhatsApp:* Showcase your products and facilitate seamless purchasing experiences within the app through our E-Commerce feature on WhatsApp.<br>8. Real-Time Employee Performance Tracking:* Monitor employee performance, track response times, and optimize productivity with Awfar Chat's performance monitoring tools.<br>9. Secure User Accounts:* Ensure the safety of your data with individual user accounts, allowing businesses to manage access to the platform securely.<br>10. Detailed Analytics and Reports:* Access a wide range of detailed reports and analytics to measure your team's efficiency, customer satisfaction, and business growth.<br>Awfar Chat is your go-to customer engagement platform that ensures effortless management of customer communications. As a Software-as-a-Service (SaaS) platform, we prioritize your business's success by providing cutting-edge technology solutions without any paid content or subscriptions.<br>Experience the power of Awfar Chat and discover a new era of customer engagement and seamless communication. Download now and revolutionize the way you interact with your customers!",
+            "mainImage": "assets/img/projects/project-sub-3.png",
+            "subImage": "assets/img/projects/project-sub-3.png",
+            "otherImage": "assets/img/projects/project-sub-3.png",
+            "technology": [
+                {
+                    "logo": "",
+                    "name": "Swift",
+                    "percentage": ""
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "name": "TEBCOM",
+            "sub_name": "Doctor - Patient",
+            "slogen": "TEBCOM Online Medical Community",
+            "clinet": "TEBCOM",
+            "clinet_site": "https://tebcom.net/",
+            "position": "iOS Developer",
+            "date": "Feb 2022 - Feb 2024",
+            "role": "Freelance",
+            "description": "Developed TEBCOM, a comprehensive Closed-Loop Tele-Consultation solution with two tailored schemes:<br>1.  TEBCOM for Patients: Designed for patients to easily access professional healthcare services from anywhere.<br>2.  TEBCOM - Doctor for Doctors: Built to help doctors manage virtual consultations and provide one-on-one care seamlessly.<br>The apps enable virtual clinics, breaking barriers to healthcare access across the globe. Integrated with .NET, SignalR for real-time communication, and Twilio for secure video and audio calls. Developed using Swift and the MVP architecture, this solution ensures doctors can run their online practices as efficiently as their physical ones, delivering professional care while maintaining quality and reliability.",
+            "mainImage": "assets/img/projects/project-main-4.png",
+            "subImage": "assets/img/projects/project-main-4.png",
+            "otherImage": "assets/img/projects/project-main-4.png",
+            "technology": [
+                {
+                    "logo": "",
+                    "name": "Swift",
+                    "percentage": ""
+                }
+            ]
+        }
+    ]);
+
     function setProjets(projects) {
         let first4 = projects.slice(0, 4);
         const projectDiv = document.getElementById('medo-project-div');
@@ -513,19 +604,19 @@
                 let project = "<div class=\"item md:col-span-2 group\">" +
                             "<a href=\"project-single.html\" class=\"block p-3 overflow-hidden border md:p-4 rounded-xl border-platinum dark:border-greyBlack\">" +
                             "<div class=\"img-wrapper\">" +
-                            "<img src=\"assets/img/portfolio/portfolio-img1.png\" class=\"rounded-lg max-md:h-[17rem] w-full max-md:object-cover max-md:object-center transition-all duration-300 group-hover:blur-xs\" alt=" + element.name + ">" + 
+                            "<img src=\"" + element.mainImage + "\" class=\"rounded-lg max-md:h-[17rem] w-full max-md:object-cover max-md:object-center transition-all duration-300 group-hover:blur-xs\" alt=" + element.name + ">" + 
                             "<div class=\"absolute inset-0 transition-all duration-300 opacity-0 overlay bg-gradient-to-t from-white dark:from-black to-transparent rounded-xl group-hover:opacity-100\">" + 
                             "</div>" +
                             "</div>" +
                             "<div class=\"info text-center position-center max-lg:text-3xl text-lead font-semibold text-black dark:text-white leading-1.15 transition duration-500 scale-110 opacity-0 group-hover:scale-100 group-hover:opacity-100 relative z-10\">" +
                             element.name +
-                            "<span>" +
+                            "<br><span>" +
                             element.sub_name +
                             "</span>" +
                             "</div>" +
                             "</a>" +
                             "<ul class=\"absolute z-10 transition-all duration-500 opacity-0 md:top-9 md:right-9 top-6 right-6 group-hover:opacity-100\">" +
-                            "<li>"
+                            "<li>" +
                             "<a href=" + element.client_site + " class=\"inline-flex items-center gap-2 px-5 py-3 text-sm font-light leading-none text-white transition-colors bg-metalBlack rounded-3xl hover:text-theme\">" +
                             element.clinet +
                             "</a>" +
@@ -538,13 +629,13 @@
                 let project = "<div class=\"item md:col-span-1 group\">" +
                         "<a href=\"project-single.html\" class=\"block p-3 overflow-hidden border md:p-4 rounded-xl border-platinum dark:border-greyBlack\">" +
                         "<div class=\"img-wrapper\">" +
-                        "<img src=" + element.mainImage + " class=\"rounded-lg max-md:h-[17rem] w-full max-md:object-cover max-md:object-center transition-all duration-300 group-hover:blur-xs\" alt=" + element.name + ">" +
+                        "<img src=\"" + element.subImage + "\" class=\"rounded-lg max-md:h-[17rem] w-full max-md:object-cover max-md:object-center transition-all duration-300 group-hover:blur-xs\" alt=" + element.name + ">" +
                         "<div class=\"absolute inset-0 transition-all duration-300 opacity-0 overlay bg-gradient-to-t from-white dark:from-black to-transparent rounded-xl group-hover:opacity-100\">" +
                         "</div>" +
                         "</div>" +
                         "<div class=\"info text-center position-center max-lg:text-3xl text-lead font-semibold text-black dark:text-white leading-1.15 transition duration-500 scale-110 opacity-0 group-hover:scale-100 group-hover:opacity-100 relative z-10\">" +
                         element.name +
-                        "<span>" +
+                        "<br><span>" +
                         element.sub_name +
                         "</span>" +
                         "</div>" +

@@ -532,6 +532,8 @@
                             "</li>" +
                             "</ul>" +
                             "</div><!--./portfolio-card-->";
+
+                projectsEl = projectsEl + project;
             } else {
                 let project = "<div class=\"item md:col-span-1 group\">" +
                         "<a href=\"project-single.html\" class=\"block p-3 overflow-hidden border md:p-4 rounded-xl border-platinum dark:border-greyBlack\">" +
@@ -555,9 +557,10 @@
                         "</li>" +
                         "</ul>" +
                         "</div><!--./portfolio-card-->";
-            }
 
-            projectsEl = projectsEl + project;
+                projectsEl = projectsEl + project;
+
+            }
         });
                 
         projectDiv.innerHTML = projectsEl;

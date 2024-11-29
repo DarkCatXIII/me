@@ -20,6 +20,32 @@
     }, 1000);
     /* Preloader End */
 
+
+    /* ============================================================ */
+    /* Set ME JSON 
+    /* ============================================================ */
+    $(document).ready(function () {
+        $.ajax({
+            url: 'me.json',
+            method: 'GET',
+            dataType: 'json',
+            success: function (data) {
+                const works = data.work;
+                const educations = data.education;
+                const projects = data.project;
+
+                setWorkExperiance(works);
+                setEducation(educations);
+                setProjets(projects);
+            },
+            error: function (e) {
+                let err = e.error
+                console.log('JSON Error.');
+            }
+        });
+    });
+
+
     /* ============================================================ */
     /* MOBILE MENU START
     /* ============================================================ */
@@ -397,31 +423,6 @@
         }, 1000);
         return false;
     });
-
-
-    /* ============================================================ */
-    /* Set Work Experiance & Education 
-    /* ============================================================ */
-    $(document).ready(function () {
-        $.ajax({
-            url: 'me.json',
-            method: 'GET',
-            dataType: 'json',
-            success: function (data) {
-                const works = data.work;
-                const educations = data.education;
-                const projects = data.project;
-
-                setWorkExperiance(works);
-                setEducation(educations);
-            },
-            error: function (e) {
-                let err = e.error
-                console.log('JSON Error.');
-            }
-        });
-    });
-
     
     /* ============================================================ */
     /* Set Work Experiance 

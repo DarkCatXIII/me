@@ -698,8 +698,8 @@
 
         let technologies = "";
 
-        project.forEach(element => {
-            let technologie = "<div class=\"flex flex-wrap items-center gap-5 progressbar\">" + 
+        project.technology.forEach(element => {
+            let technology = "<div class=\"flex flex-wrap items-center gap-5 progressbar\">" + 
                             "<div class=\"w-8 icon\">" +
                             "<img src=\"" + element.logo + "\" alt=\"HTML5\">" +
                             "</div>" +
@@ -713,7 +713,7 @@
                             "</div>" +
                             "</div>"
 
-            technologies = technologies + technologie;
+            technologies = technologies + technology;
         });
 
         technologiesEl.innerHTML = technologies;

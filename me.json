@@ -134,7 +134,7 @@
                 {
                     "logo": "assets/img/skill/SwiftUI.svg",
                     "name": "SwiftUI",
-                    "percentage": "100"
+                    "percentage": "100%"
                 }
             ]
         },
@@ -157,7 +157,7 @@
                 {
                     "logo": "assets/img/skill/Swift.svg",
                     "name": "Swift",
-                    "percentage": "100"
+                    "percentage": "100%"
                 }
             ]
         },
@@ -180,7 +180,7 @@
                 {
                     "logo": "assets/img/skill/SwiftUI.svg",
                     "name": "SwiftUI",
-                    "percentage": "100"
+                    "percentage": "100%"
                 }
             ]
         },
@@ -203,7 +203,7 @@
                 {
                     "logo": "assets/img/skill/Swift.svg",
                     "name": "Swift",
-                    "percentage": "100"
+                    "percentage": "100%"
                 }
             ]
         },
@@ -224,9 +224,9 @@
             "otherImage": "",
             "technology": [
                 {
-                    "logo": "",
+                    "logo": "assets/img/skill/SwiftUI.svg",
                     "name": "SwiftUI",
-                    "percentage": ""
+                    "percentage": "100%"
                 }
             ]
         },
@@ -247,9 +247,9 @@
             "otherImage": "",
             "technology": [
                 {
-                    "logo": "",
+                    "logo": "assets/img/skill/figma.svg",
                     "name": "Figma",
-                    "percentage": ""
+                    "percentage": "100%"
                 }
             ]
         },
@@ -270,9 +270,9 @@
             "otherImage": "",
             "technology": [
                 {
-                    "logo": "",
+                    "logo": "assets/img/skill/figma.svg",
                     "name": "Figma",
-                    "percentage": ""
+                    "percentage": "100%"
                 }
             ]
         },
@@ -293,14 +293,14 @@
             "otherImage": "",
             "technology": [
                 {
-                    "logo": "",
+                    "logo": "assets/img/skill/Swift.svg",
                     "name": "Swift",
-                    "percentage": ""
+                    "percentage": "100%"
                 },
                 {
-                    "logo": "",
+                    "logo": "assets/img/skill/figma.svg",
                     "name": "Figma",
-                    "percentage": ""
+                    "percentage": "100%"
                 }
             ]
         },
@@ -321,9 +321,9 @@
             "otherImage": "",
             "technology": [
                 {
-                    "logo": "",
+                    "logo": "assets/img/skill/xcode.svg",
                     "name": "Objective-C",
-                    "percentage": ""
+                    "percentage": "100%"
                 }
             ]
         },
@@ -344,14 +344,14 @@
             "otherImage": "",
             "technology": [
                 {
-                    "logo": "",
+                    "logo": "assets/img/skill/webflow.svg",
                     "name": "Ionic",
-                    "percentage": ""
+                    "percentage": "100%"
                 },
                 {
-                    "logo": "",
+                    "logo": "assets/img/skill/angular.svg",
                     "name": "Angular 2+",
-                    "percentage": ""
+                    "percentage": "100%"
                 }
             ]
         },
@@ -372,14 +372,14 @@
             "otherImage": "",
             "technology": [
                 {
-                    "logo": "",
+                    "logo": "assets/img/skill/Swift.svg",
                     "name": "Swift",
-                    "percentage": ""
+                    "percentage": "100%"
                 },
                 {
-                    "logo": "",
+                    "logo": "assets/img/skill/angular.svg",
                     "name": "Angular 2+",
-                    "percentage": ""
+                    "percentage": "100%"
                 }
             ]
         },
@@ -400,9 +400,9 @@
             "otherImage": "",
             "technology": [
                 {
-                    "logo": "",
+                    "logo": "assets/img/skill/Swift.svg",
                     "name": "Swift",
-                    "percentage": ""
+                    "percentage": "100%"
                 }
             ]
         },
@@ -423,14 +423,14 @@
             "otherImage": "",
             "technology": [
                 {
-                    "logo": "",
+                    "logo": "assets/img/skill/Swift.svg",
                     "name": "Boot Spring MVC",
-                    "percentage": ""
+                    "percentage": "100%"
                 },
                 {
-                    "logo": "",
+                    "logo": "assets/img/skill/Swift.svg",
                     "name": "SQL",
-                    "percentage": ""
+                    "percentage": "100%"
                 }
             ]
         }

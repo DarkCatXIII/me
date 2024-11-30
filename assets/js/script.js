@@ -703,7 +703,7 @@
                             "<div class=\"w-8 icon\">" +
                             "<img src=\"" + element.logo + "\" alt=\"HTML5\">" +
                             "</div>" +
-                            "<div class=\"flex-1 bar\" data-percentage=\"" + element.percentage + "%\">" +
+                            "<div class=\"flex-1 bar\" data-percentage=\"" + element.percentage + "\">" +
                             "<h5 class=\"mb-2 text-black dark:text-white progress-title-holder text-regular\">" +
                             "<span class=\"progress-title\">" + element.name + "</span>" +
                             "</h5>" +

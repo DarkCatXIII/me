@@ -36,7 +36,7 @@
 
                 const currentUrl = window.location.href;
 
-                if(currentUrl.includes("profile.html")) {
+                if(currentUrl.includes("project.html")) {
                     const hash = window.location.hash;
                     const hashContent = hash.substring(1);
                     const result = projects.find(item => item.slug === hashContent);

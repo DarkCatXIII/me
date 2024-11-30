@@ -708,7 +708,7 @@
                             "<span class=\"progress-title\">" + element.name + "</span>" +
                             "</h5>" +
                             "<div class=\"progress-outer bg-platinum dark:bg-greyBlack h-1.5 rounded-2xl\">" +
-                            "<div class=\"progress-content bg-theme h-1.5 w-0 rounded-2xl\"></div>" +
+                            "<div class=\"progress-content bg-theme h-1.5 w-0 rounded-2xl\" style=\"width: " + element.percentage + "\"></div>" +
                             "</div>" +
                             "</div>" +
                             "</div>"

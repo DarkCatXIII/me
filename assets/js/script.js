@@ -34,9 +34,19 @@
                 const educations = data.education;
                 const projects = data.project;
 
-                setWorkExperiance(works);
-                setEducation(educations);
-                setProjets(projects);
+                const currentUrl = window.location.href;
+
+                if(currentUrl.includes("profile.html")) {
+                    const hash = window.location.hash;
+                    const hashContent = hash.substring(1);
+                    const result = projects.find(item => item.slug === hashContent);
+                    setProjet(result);
+                } else {
+                    setWorkExperiance(works);
+                    setEducation(educations);
+                    setProjets(projects);
+                }
+                
             },
             error: function (e) {
                 let err = e.error
@@ -506,6 +516,7 @@
         {
             "id": 1,
             "name": "El Ezaby",
+            "slug": "El-Ezaby-Pharmacy",
             "sub_name": "Pharmacy",
             "slogen": "El Ezaby Pharmacy app",
             "clinet": "Awfar Inc.",
@@ -528,6 +539,7 @@
         {
             "id": 2,
             "name": "Wayak - وياك",
+            "slug": "El-Ezaby-Pharmacy",
             "sub_name": "Your Meds, Your Health",
             "slogen": "Wayak - ONE APPLICATION FOR ALL YOUR MEDICAL NEEDS",
             "clinet": "Wayak",
@@ -550,6 +562,7 @@
         {
             "id": 3,
             "name": "Awfar Chat",
+            "slug": "El-Ezaby-Pharmacy",
             "sub_name": "CRM Chat System",
             "slogen": "Awfar Chat Center",
             "clinet": "Awfar Inc.",
@@ -572,6 +585,7 @@
         {
             "id": 4,
             "name": "TEBCOM",
+            "slug": "El-Ezaby-Pharmacy",
             "sub_name": "Doctor - Patient",
             "slogen": "TEBCOM Online Medical Community",
             "clinet": "TEBCOM",
@@ -602,7 +616,7 @@
         first4.forEach(function(element, index, array) {
             if (index == 0 || index == 3) {
                 let project = "<div class=\"item md:col-span-2 group\">" +
-                            "<a href=\"project-single.html\" class=\"block p-3 overflow-hidden border md:p-4 rounded-xl border-platinum dark:border-greyBlack\">" +
+                            "<a href=\"project.html#" + element.slug + "\" class=\"block p-3 overflow-hidden border md:p-4 rounded-xl border-platinum dark:border-greyBlack\">" +
                             "<div class=\"img-wrapper\">" +
                             "<img src=\"" + element.mainImage + "\" class=\"rounded-lg max-md:h-[17rem] w-full max-md:object-cover max-md:object-center transition-all duration-300 group-hover:blur-xs\" alt=" + element.name + ">" + 
                             "<div class=\"absolute inset-0 transition-all duration-300 opacity-0 overlay bg-gradient-to-t from-white dark:from-black to-transparent rounded-xl group-hover:opacity-100\">" + 
@@ -627,7 +641,7 @@
                 projectsEl = projectsEl + project;
             } else {
                 let project = "<div class=\"item md:col-span-1 group\">" +
-                        "<a href=\"project-single.html\" class=\"block p-3 overflow-hidden border md:p-4 rounded-xl border-platinum dark:border-greyBlack\">" +
+                        "<a href=\"project.html#" + element.slug + "\" class=\"block p-3 overflow-hidden border md:p-4 rounded-xl border-platinum dark:border-greyBlack\">" +
                         "<div class=\"img-wrapper\">" +
                         "<img src=\"" + element.subImage + "\" class=\"rounded-lg max-md:h-[17rem] w-full max-md:object-cover max-md:object-center transition-all duration-300 group-hover:blur-xs\" alt=" + element.name + ">" +
                         "<div class=\"absolute inset-0 transition-all duration-300 opacity-0 overlay bg-gradient-to-t from-white dark:from-black to-transparent rounded-xl group-hover:opacity-100\">" +
@@ -656,6 +670,33 @@
                 
         projectDiv.innerHTML = projectsEl;
     }
+
+    /* ============================================================ */
+    /* Set Single Projet
+    /* ============================================================ */
+    function setProjet(project) {
+        const titleEl = document.getElementById('medo-project-title');
+        const mainImageEl = document.getElementById('project-main-image');
+        const clientEl = document.getElementById('medo-client');
+        const servicesEl = document.getElementById('medo-services');
+        const periodEl = document.getElementById('medo-period');
+        const typeEl = document.getElementById('medo-type');
+        const descriptionEl = document.getElementById('medo-description');
+        const subImageEl = document.getElementById('medo-sub-image');
+        const otherImageEl = document.getElementById('medo-other-image');
+
+        titleEl.innerHTML = project.slogen;
+        mainImageEl.innerHTML = "<img src=\"" + project.mainImage + "\" class=\"w-full\" alt=\"" + project.name + "\">";
+        clientEl.innerHTML = project.clinet;
+        servicesEl.innerHTML = project.position;
+        periodEl.innerHTML = project.date;
+        typeEl.innerHTML = project.role;
+        descriptionEl.innerHTML = project.description;
+        subImageEl.innerHTML = "<img src=\"" + project.subImage + "\" class=\"w-full\" alt=\"" + project.name + "\">";
+        otherImageEl.innerHTML = "<img src=\"" + project.otherImage + "\" class=\"w-full\" alt=\"" + project.name + "\">";
+
+    }
+
 
 
     /* ============================================================ */

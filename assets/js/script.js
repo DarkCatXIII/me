@@ -684,6 +684,7 @@
         const descriptionEl = document.getElementById('medo-description');
         const subImageEl = document.getElementById('medo-sub-image');
         const otherImageEl = document.getElementById('medo-other-image');
+        const technologiesEl = document.getElementById('medo-technologies');
 
         titleEl.innerHTML = project.slogen;
         mainImageEl.innerHTML = "<img src=\"" + project.mainImage + "\" class=\"w-full\" alt=\"" + project.name + "\">";
@@ -695,6 +696,27 @@
         subImageEl.innerHTML = "<img src=\"" + project.subImage + "\" class=\"w-full\" alt=\"" + project.name + "\">";
         otherImageEl.innerHTML = "<img src=\"" + project.otherImage + "\" class=\"w-full\" alt=\"" + project.name + "\">";
 
+        let technologies = "";
+
+        project.forEach(element => {
+            let technologie = "<div class=\"flex flex-wrap items-center gap-5 progressbar\">" + 
+                            "<div class=\"w-8 icon\">" +
+                            "<img src=\"" + element.logo + "\" alt=\"HTML5\">" +
+                            "</div>" +
+                            "<div class=\"flex-1 bar\" data-percentage=\"" + element.percentage + "%\">" +
+                            "<h5 class=\"mb-2 text-black dark:text-white progress-title-holder text-regular\">" +
+                            "<span class=\"progress-title\">" + element.name + "</span>" +
+                            "</h5>" +
+                            "<div class=\"progress-outer bg-platinum dark:bg-greyBlack h-1.5 rounded-2xl\">" +
+                            "<div class=\"progress-content bg-theme h-1.5 w-0 rounded-2xl\"></div>" +
+                            "</div>" +
+                            "</div>" +
+                            "</div>"
+
+            technologies = technologies + technologie;
+        });
+
+        technologiesEl.innerHTML = technologies;
     }
 
 

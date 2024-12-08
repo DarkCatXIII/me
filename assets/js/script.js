@@ -634,7 +634,7 @@
 
         const myProjectsEl = document.getElementById('medo-my-projects-list');
 
-        const listEl = ``;
+        let listEl = "";
 
         // Loop through the original array and slice it into chunks
         for (let i = 0; i < projects.length; i += chunkSize) {

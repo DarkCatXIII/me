@@ -737,20 +737,23 @@
         myProjectsPagenationEl.innerHTML = pagesEl;
     }
 
-    $('.next-button-view').click(function() {
-         const currentPage = $(this).data('value');
-         updatePage(parseInt(currentPage) + 1);
-    });
+    $(document).ready(function () {
+        $('.next-button-view').click(function() {
+            const currentPage = $(this).data('value');
+            updatePage(parseInt(currentPage) + 1);
+        });
 
-    $('.prev-button-view').click(function() {
-         const currentPage = $(this).data('value');
-         updatePage(parseInt(currentPage) - 1);
-    });
+        $('.prev-button-view').click(function() {
+            const currentPage = $(this).data('value');
+            updatePage(parseInt(currentPage) - 1);
+        });
 
-    $('.page-button-number-view').click(function() {
-        const selectedPage = $(this).data('value');
-        updatePage(parseInt(selectedPage));
-    });
+        $('.page-button-number-view').click(function() {
+            const selectedPage = $(this).data('value');
+            updatePage(parseInt(selectedPage));
+        });
+
+    })
 
     function updatePage(page) {
         $.ajax({

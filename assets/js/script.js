@@ -36,7 +36,9 @@
 
                 const currentUrl = window.location.href;
 
-                if(currentUrl.includes("project.html")) {
+                if(currentUrl.includes("my-projects.html")) {
+                    myProjects(projects, 0);
+                }else if(currentUrl.includes("project.html")) {
                     const hash = window.location.hash;
                     const hashContent = hash.substring(1);
                     const result = projects.find(item => item.slug === hashContent);
@@ -629,7 +631,11 @@
     function myProjects(projects, page) {
         const chunkSize = 8; // Number of objects per chunk
         const chunkedArray = [];
-        
+
+        const myProjectsEl = document.getElementById('medo-my-projects-list');
+
+        const listEl = ``;
+
         // Loop through the original array and slice it into chunks
         for (let i = 0; i < originalArray.length; i += chunkSize) {
             chunkedArray.push(originalArray.slice(i, i + chunkSize));
@@ -637,11 +643,61 @@
 
         chunkedArray.array.forEach((e, i) => {
             if (i == 0 || i == 5) {
+                let proj = "<div class=\"item md:col-span-2 group\">" +
+                            "<a href=\"project.html#" + element.slug + "\" class=\"block p-3 overflow-hidden border md:p-4 rounded-xl border-platinum dark:border-greyBlack\">" +
+                            "<div class=\"img-wrapper\">" +
+                            "<img src=\"" + element.mainImage + "\" class=\"rounded-lg max-md:h-[17rem] w-full max-md:object-cover max-md:object-center transition-all duration-300 group-hover:blur-xs\" alt=" + element.name + ">" + 
+                            "<div class=\"absolute inset-0 transition-all duration-300 opacity-0 overlay bg-gradient-to-t from-white dark:from-black to-transparent rounded-xl group-hover:opacity-100\">" + 
+                            "</div>" +
+                            "</div>" +
+                            "<div class=\"info text-center position-center max-lg:text-3xl text-lead font-semibold text-black dark:text-white leading-1.15 transition duration-500 scale-110 opacity-0 group-hover:scale-100 group-hover:opacity-100 relative z-10\">" +
+                            element.name +
+                            "<br><span>" +
+                            element.sub_name +
+                            "</span>" +
+                            "</div>" +
+                            "</a>" +
+                            "<ul class=\"absolute z-10 transition-all duration-500 opacity-0 md:top-9 md:right-9 top-6 right-6 group-hover:opacity-100\">" +
+                            "<li>" +
+                            "<a href=" + element.client_site + " class=\"inline-flex items-center gap-2 px-5 py-3 text-sm font-light leading-none text-white transition-colors bg-metalBlack rounded-3xl hover:text-theme\">" +
+                            element.clinet +
+                            "</a>" +
+                            "</li>" +
+                            "</ul>" +
+                            "</div><!--./portfolio-card-->";
 
+
+                listEl = listEl + proj;
             } else {
-                
+                let proj = "<div class=\"item md:col-span-1 group\">" +
+                        "<a href=\"project.html#" + element.slug + "\" class=\"block p-3 overflow-hidden border md:p-4 rounded-xl border-platinum dark:border-greyBlack\">" +
+                        "<div class=\"img-wrapper\">" +
+                        "<img src=\"" + element.subImage + "\" class=\"rounded-lg max-md:h-[17rem] w-full max-md:object-cover max-md:object-center transition-all duration-300 group-hover:blur-xs\" alt=" + element.name + ">" +
+                        "<div class=\"absolute inset-0 transition-all duration-300 opacity-0 overlay bg-gradient-to-t from-white dark:from-black to-transparent rounded-xl group-hover:opacity-100\">" +
+                        "</div>" +
+                        "</div>" +
+                        "<div class=\"info text-center position-center max-lg:text-3xl text-lead font-semibold text-black dark:text-white leading-1.15 transition duration-500 scale-110 opacity-0 group-hover:scale-100 group-hover:opacity-100 relative z-10\">" +
+                        element.name +
+                        "<br><span>" +
+                        element.sub_name +
+                        "</span>" +
+                        "</div>" +
+                        "</a>" +
+                        "<ul class=\"absolute z-10 transition-all duration-500 opacity-0 md:top-9 md:right-9 top-6 right-6 group-hover:opacity-100\">" +
+                        "<li>" +
+                        "<a href=" + element.client_site + " class=\"inline-flex items-center gap-2 px-5 py-3 text-sm font-light leading-none text-white transition-colors bg-metalBlack rounded-3xl hover:text-theme\">" +
+                        element.clinet +
+                        "</a>" +
+                        "</li>" +
+                        "</ul>" +
+                        "</div><!--./portfolio-card-->";
+
+
+                listEl = listEl + proj;
             }
         });
+
+        myProjectsEl.innerHTML = listEl;
     }
 
     /* ============================================================ */

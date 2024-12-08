@@ -739,17 +739,17 @@
 
     $('.next-button-view').click(function() {
          const currentPage = $(this).data('value');
-         updatePage(currentPage + 1);
+         updatePage(parseInt(currentPage) + 1);
     });
 
     $('.prev-button-view').click(function() {
          const currentPage = $(this).data('value');
-         updatePage(currentPage - 1);
+         updatePage(parseInt(currentPage) - 1);
     });
 
     $('.page-button-number-view').click(function() {
         const selectedPage = $(this).data('value');
-        updatePage(selectedPage);
+        updatePage(parseInt(selectedPage));
     });
 
     function updatePage(page) {

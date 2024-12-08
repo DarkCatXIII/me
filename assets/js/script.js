@@ -637,8 +637,8 @@
         const listEl = ``;
 
         // Loop through the original array and slice it into chunks
-        for (let i = 0; i < originalArray.length; i += chunkSize) {
-            chunkedArray.push(originalArray.slice(i, i + chunkSize));
+        for (let i = 0; i < projects.length; i += chunkSize) {
+            chunkedArray.push(projects.slice(i, i + chunkSize));
         }
 
         chunkedArray.array.forEach((e, i) => {

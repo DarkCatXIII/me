@@ -641,7 +641,7 @@
             chunkedArray.push(projects.slice(i, i + chunkSize));
         }
 
-        chunkedArray.forEach((element, i) => {
+        chunkedArray[page].forEach((element, i) => {
             if (i == 0 || i == 5) {
                 let proj = "<div class=\"item md:col-span-2 group\">" +
                             "<a href=\"project.html#" + element.slug + "\" class=\"block p-3 overflow-hidden border md:p-4 rounded-xl border-platinum dark:border-greyBlack\">" +

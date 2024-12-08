@@ -714,7 +714,7 @@
                     "</svg>" +
                     "</a>";
 
-        for (let i = 0; i < chunkedArrayPages.length ; i++) {
+        for (let i = 0; i < chunkedArrayPages ; i++) {
             let countEl = "";
             if((i + 1) == page) {
                 countEl = "<a data-value=\"" + (i + 1) + "\" class=\"active page-button-number-view hover:bg-theme hover:border-theme hover:text-white [&.active]:bg-theme [&.active]:text-white\">" + (i + 1) + "</a>";

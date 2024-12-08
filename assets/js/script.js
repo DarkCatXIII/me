@@ -37,7 +37,7 @@
                 const currentUrl = window.location.href;
 
                 if(currentUrl.includes("my-projects.html")) {
-                    myProjects(projects, 0);
+                    myProjects(projects, 1);
                 }else if(currentUrl.includes("project.html")) {
                     const hash = window.location.hash;
                     const hashContent = hash.substring(1);
@@ -631,6 +631,7 @@
     function myProjects(projects, page) {
         const chunkSize = 8; // Number of objects per chunk
         const chunkedArray = [];
+        let chunkedArrayPages = chunkedArray.length;
 
         const myProjectsEl = document.getElementById('medo-my-projects-list');
 
@@ -641,7 +642,13 @@
             chunkedArray.push(projects.slice(i, i + chunkSize));
         }
 
-        chunkedArray[page].forEach((element, i) => {
+        chunkedArrayPages = chunkedArray.length;
+        
+        if (page < 1 || page >= chunkedArrayPages.countEl) {
+            return
+        }
+
+        chunkedArray[page - 1].forEach((element, i) => {
             if (i == 0 || i == 5) {
                 let proj = "<div class=\"item md:col-span-2 group\">" +
                             "<a href=\"project.html#" + element.slug + "\" class=\"block p-3 overflow-hidden border md:p-4 rounded-xl border-platinum dark:border-greyBlack\">" +
@@ -698,6 +705,67 @@
         });
 
         myProjectsEl.innerHTML = listEl;
+
+        const myProjectsPagenationEl = document.getElementById('medo-my-projects-list-pagination');
+        
+        let pagesEl = "<a data-value=\"" + page + "\" class=\"prev prev-button-view hover:bg-theme hover:border-theme hover:text-white [&.active]:bg-theme [&.active]:text-white\">" +
+                    "<svg class=\"w-4\" viewBox=\"0 0 22 16\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">" +
+                    "<path d=\"M20.5738 7.75879L0.761719 7.75879M0.761719 7.75879L7.3501 1.17041M0.761719 7.75879L7.3501 14.3472\" stroke=\"currentcolor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>" +
+                    "</svg>" +
+                    "</a>";
+
+        for (let i = 0; i < chunkedArrayPages.length ; i++) {
+            let countEl = "";
+            if((i + 1) == page) {
+                countEl = "<a data-value=\"" + (i + 1) + "\" class=\"active page-button-number-view hover:bg-theme hover:border-theme hover:text-white [&.active]:bg-theme [&.active]:text-white\">" + (i + 1) + "</a>";
+            } else {
+                countEl = "<a data-value=\"" + (i + 1) + "\" class=\"page-button-number-view hover:bg-theme hover:border-theme hover:text-white [&.active]:bg-theme [&.active]:text-white\">" + (i + 1) + "</a>";
+            }
+
+
+            pagesEl = pagesEl + countEl;
+        }
+
+        let pagesLastEl = "<a data-value=\"" + page + "\" class=\"next next-button-view hover:bg-theme hover:border-theme hover:text-white [&.active]:bg-theme [&.active]:text-white\">" +
+                        "<svg class=\"w-4\" viewBox=\"0 0 22 16\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">" +
+                        "<path d=\"M1.19961 7.75879L21.0117 7.75879M21.0117 7.75879L14.4233 1.17041M21.0117 7.75879L14.4233 14.3472\" stroke=\"currentcolor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>" +
+                        "</svg> " +                                 
+                        "</a>";
+
+        pagesEl = pagesEl + pagesLastEl;
+
+        myProjectsPagenationEl.innerHTML = pagesEl;
+    }
+
+    $('.next-button-view').click(function() {
+         const currentPage = $(this).data('value');
+         updatePage(currentPage + 1);
+    });
+
+    $('.prev-button-view').click(function() {
+         const currentPage = $(this).data('value');
+         updatePage(currentPage - 1);
+    });
+
+    $('.page-button-number-view').click(function() {
+        const selectedPage = $(this).data('value');
+        updatePage(selectedPage);
+    });
+
+    function updatePage(page) {
+        $.ajax({
+            url: 'me.json',
+            method: 'GET',
+            dataType: 'json',
+            success: function (data) {
+                const projects = data.project;
+                myProjects(projects, page);
+            },
+            error: function (e) {
+                let err = e.error
+                console.log('JSON Error.');
+            }
+        });
     }
 
     /* ============================================================ */

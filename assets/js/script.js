@@ -515,7 +515,7 @@
     /* Set Projets 
     /* ============================================================ */
     function setProjets(projects) {
-        let first4 = projects.slice(0, 4);
+        let first4 = projects.filter(project => project.vip === true);
         const projectDiv = document.getElementById('medo-project-div');
 
         let projectsEl = ``;

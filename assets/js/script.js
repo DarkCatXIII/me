@@ -738,21 +738,21 @@
     }
 
     $(document).ready(function () {
-        $('.next-button-view').click(function() {
+
+        $(document).on('click', '.next-button-view', function() {
             const currentPage = $(this).data('value');
             updatePage(parseInt(currentPage) + 1);
         });
 
-        $('.prev-button-view').click(function() {
+        $(document).on('click', '.prev-button-view', function() {
             const currentPage = $(this).data('value');
             updatePage(parseInt(currentPage) - 1);
         });
 
-        $('.page-button-number-view').click(function() {
+        $(document).on('click', '.page-button-number-view', function() {
             const selectedPage = $(this).data('value');
             updatePage(parseInt(selectedPage));
         });
-
     })
 
     function updatePage(page) {
